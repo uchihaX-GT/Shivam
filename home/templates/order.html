@@ -1,0 +1,109 @@
+{% extends "basic.html" %}
+
+{% block css %}
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Assistant');
+body {
+  background: #eee;
+  font-family: Assistant, sans-serif;
+}
+
+.cell-1 {
+  border-collapse: separate;
+  border-spacing: 0 4em;
+  background: #fff;
+  border-bottom: 5px solid transparent;
+  /*background-color: gold;*/
+  background-clip: padding-box;
+}
+
+thead {
+  background: #dddcdc;
+}
+
+.toggle-btn {
+  width: 40px;
+  height: 21px;
+  background: grey;
+  border-radius: 50px;
+  padding: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s 0.1s ease-in-out;
+  -moz-transition: all 0.3s 0.1s ease-in-out;
+  -o-transition: all 0.3s 0.1s ease-in-out;
+  transition: all 0.3s 0.1s ease-in-out;
+}
+
+.toggle-btn > .inner-circle {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s 0.1s ease-in-out;
+  -moz-transition: all 0.3s 0.1s ease-in-out;
+  -o-transition: all 0.3s 0.1s ease-in-out;
+  transition: all 0.3s 0.1s ease-in-out;
+}
+
+.toggle-btn.active {
+  background: blue !important;
+}
+
+.toggle-btn.active > .inner-circle {
+  margin-left: 19px;
+}
+</style>
+
+{% endblock css %}
+
+
+
+
+
+
+
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10">
+            <div class="rounded">
+                <div class="table-responsive table-borderless">
+                    <table class="table">
+                        <thead>
+                            <tr>                                
+                                <th>Order #</th>
+                                <th>Shoe name</th>
+                                <th>status</th>
+                                <th>Shoe Price</th>
+                                <th>Delivery Charge</th>
+                                <th>Total</th>
+                                <th>Created</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            {% for o in ord %}
+                            <tr class="cell-1">                                
+                                <td>#7{{o.Shoe.id}}</td>
+                                <td>{{o.Shoe.name}}</td>
+                                <td><span >Pending</span></td>
+                                <td>{{o.Shoe.discounted_price}}</td>
+                                <td>100</td>
+                                <td>{{o.Shoe.discounted_price|add:100}}</td>
+                                <td>Today</td>
+                                
+                            </tr>                            
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

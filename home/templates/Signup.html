@@ -1,0 +1,28 @@
+{% extends "basic.html" %}
+
+{% block title %}<title>Sign-up</title>{% endblock title %}
+
+{% block log %}<button type="button" class="btn btn-success register-button" value="login"><a href="{% url 'login' %}" class="link-light" style="text-decoration: none;">Login</a></button>{% endblock log%}
+
+
+{% block content %}
+<div style="background-color: #eee;">
+    <div class="container register w-25 h-50 my-3" style="background-color: white;border-radius: 25px;border: 1px double rgba(28, 143, 53, 0.541);">
+        <div class="register-heading ">
+            <h2 class="mb-3 mt-2 text-success">Register Here</h2>
+        </div>
+       <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            {% for f in mf%}
+            <div class="form-group mr-4 ml-4 ">
+                {{f.label_tag}} {{f}} {{f.errors}}
+            </div> 
+            {% endfor %}
+            <div class="text-center mt-2 mb-1">
+            <input type="submit" value="Register" class="btn btn-success register-button">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}<title>Document</title>{% endblock title %}
+  <link rel="stylesheet" href="{% static 'css\all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css\bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css\main.css' %}">
+  {% block css %}{% endblock css %}
+
+
+</head>
+
+<body>
+  <!-- header/navbar -->
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi mx-2" width="40" height="40" role="img" aria-label="Bootstrap">
+            <img src="../static/images/sport-shoe-svgrepo-com.svg" height="40vh" width="40px">
+          </svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'home' %}" class="nav-link px-3 text-white">Home</a></li>
+          <li><a href="{% url 'men' %}" class="nav-link px-3 text-white">Mens</a></li>
+          <li><a href="{% url  'women' %}" class="nav-link px-3 text-white">Womens</a></li>
+          <li><a href="{% url 'about' %}" class="nav-link px-3 text-white">AboutUs</a></li>
+        </ul>
+
+
+        <div class="text-end">
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item active">
+              <a class="nav-link link-light mr-3"
+                href="{% url 'profile' %}"><b>Welcome,"{{user.first_name|title}}"</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-light mr-3" href="{% url 'viewcart' %}">MyCart
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-shopping-cart">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </a>
+            </li>
+            </li>
+            <li class="nav-item">
+              <button type="button"  class="btn btn-success px-2"><a class="nav-link link-light text-light"
+                  href="{% url 'logout' %}">Logout</a></button>
+            </li>
+            {% else %}
+            <button type="button"  class="btn btn-success mx-2"><a href="{% url 'login' %}"
+                style="text-decoration: none;" class="link-light text-light ">Login</a></button>
+            <button type="button"  class="btn btn-success mx-2" ><a href="{% url 'signup' %}"
+                style="text-decoration: none;" class="link-light text-light">Sign-up</a></button>
+            {% endif %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <!-- carousel -->
+  {% block carousel %}{% endblock carousel %}
+
+  <!-- for any content to be added in future -->
+  {% block content %}{% endblock content%}
+
+
+  <!-- cards -->
+  {% block cards %}{% endblock cards %}
+
+
+
+  <!-- footer -->
+  
+  <footer class="footer">
+    <!-- Widgets - Bootstrap Brain Component -->
+    <section class="bg-dark py-4 py-md-5 py-xl-8 border-top border-light">
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-lg-0 justify-content-xl-between">
+          <div class="col-12 col-md-4 col-lg-4 col-xl-3">
+            <div class="widget">
+              <h4 class="widget-title text-secondary mb-4">Get in Touch</h4>
+              <address class="mb-4 text-secondary">8014 Edith Blvd NE, Albuquerque, New York, United States</address>
+              <p class="mb-1">
+                <a class="link-secondary text-decoration-none" href="tel:+15057922430">(505) 792-2430</a>
+              </p>
+              <p class="mb-0">
+                <a class="link-secondary text-decoration-none" href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+              </p>
+              <div class="copyright text-center text-md-start text-secondary mt-3">
+                &copy; 2024. All Rights Reserved.
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-4 col-xl-2">
+            <div class="widget">
+              <h4 class="widget-title text-secondary mb-4">Learn More</h4>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">About</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">Contact</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">Advertise</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#!" class="link-secondary text-decoration-none">Terms of Service</a>
+                </li>
+                <li class="mb-0">
+                  <a href="#!" class="link-secondary text-decoration-none">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 col-md-4 col-xl-4">
+            <div class="widget">
+              <h4 class="widget-title text-secondary mb-4">Our Newsletter</h4>
+              <p class="mb-4 text-secondary">Subscribe to our newsletter to get our news & discounts delivered to you.</p>
+              <form action="#!">
+                <div class="row gy-4">
+                  <div class="col-12">
+                    <div class="input-group">
+                      <span class="input-group-text" id="email-newsletter-addon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-envelope" viewBox="0 0 16 16">
+                          <path
+                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                        </svg>
+                      </span>
+                      <input type="email" class="form-control" id="email-newsletter" value=""
+                        placeholder="Email Address" aria-label="email-newsletter"
+                        aria-describedby="email-newsletter-addon" required>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <button class="btn btn-success" type="submit">Subscribe</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+</body>
+<script src="{% static 'js\jquery.js' %}"></script>
+<script src="{% static 'js\popper.js' %}"></script>
+<script src="{% static 'js\all.min.js' %}"></script>
+<script src="{% static 'js\bootstrap.min.js' %}"></script>
+<script src="{% static 'js\myjs.js' %}"></script>
+
+</html>

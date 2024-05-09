@@ -1,0 +1,21 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title %}<title>Home</title>{% endblock title %}
+
+{% block css %}
+<style>
+    body{
+        background-color: #eee;
+    }
+</style>
+{% endblock css %}
+
+
+
+{% block carousel %}{% include 'content.html' %}{% endblock carousel %}
+
+
+{% block cards %}{% include 'cards.html' %}{% endblock cards %}
+
+

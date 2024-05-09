@@ -1,0 +1,28 @@
+{% block carousel %}
+<div id="carouselExampleInterval" class="carousel slide mt-3 container-fluid" style="background-color: grey;"
+  data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="../static/images/home/1.png" class="d-block"
+        style="height: 350px;width: 80%;margin-left: 120px;margin-right: 120px;" alt="Excellent For Sports">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../static/images/home/3.jpg" class="d-block"
+        style="height: 350px;width: 80%;margin-left: 120px;margin-right: 120px;" alt="High Quality">
+    </div>
+    <div class="carousel-item">
+      <img src="../static/images/home/4.jpg" class="d-block"
+        style="height: 350px;width: 80%;margin-left: 120px;margin-right: 120px;" alt="High durability">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+{% endblock carousel %}

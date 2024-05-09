@@ -1,0 +1,86 @@
+<!-- home cards -->
+
+<!-- 1st row -->
+{% block cards %}
+
+<div class="container-fluid my-3 ">
+    <div class="container">
+        <div class="row" style="margin-left: auto;">
+            <div class="card col-ld-3 col-md-4 col-6 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card1 %}<img src="../static/images/home/s.jpg" class=" img-fluid card-img-top "  alt="...">{% endblock card1 %}
+                <div class="card-body">
+                    <h5 class="card-title">Mens Sports Shoes</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'men' %}" class="btn btn-success">Explore For Mens</a>
+                </div>
+            </div>
+            <div class="card col-ld-3 col-md-4 col-12 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card2 %}<img src="../static/images/home/formals.jpeg" class=" img-fluid card-img-top" alt="...">{% endblock card2 %}
+                <div class="card-body">
+                    <h5 class="card-title">Mens Formal Shoes</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'men' %}" class="btn btn-success">Explore For Mens</a>
+                </div>
+            </div>
+            <div class="card col-ld-3 col-md-4 col-12 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card3 %}<img src="../static/images/home/tpb.jpeg" class="img-fluid card-img-top" alt="...">{% endblock card3 %}
+                <div class="card-body">
+                    <h5 class="card-title">Mens Sneakers</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'men' %}" class="btn btn-success">Explore For Mens</a>
+                </div>
+            </div>
+            <div class="card col-ld-3 col-md-4 col-12 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card4 %}<img src="../static/images/men/sandals/images.jpeg" class="img-fluid card-img-top" alt="...">{% endblock card4 %}
+                <div class="card-body">
+                    <h5 class="card-title">Mens Sandal styles</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'men' %}" class="btn btn-success">Explore For Mens</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2nd row -->
+
+<div class="container-fluid my-3">
+    <div class="container">
+        <div class="row" style="margin-left: auto;">
+            <div class="card col-ld-3 col-md-4 col-6 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card5 %}<img src="../static/images/women/images.jpeg" class="img-fluid card-img-top" alt="...">{% endblock card5 %}
+                <div class="card-body">
+                    <h5 class="card-title">Womens sports Shoes</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'women' %}" class="btn btn-success ">Explore For Womens</a>
+                </div>
+            </div>
+            <div class="card col-ld-3 col-md-4 col-12 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card6 %}<img src="../static/images/women/for.jpeg" class="img-fluid card-img-top" alt="...">{% endblock card6 %}
+                <div class="card-body">
+                    <h5 class="card-title">women formal  Shoes</h5>
+                    <p class="card-text "></p><br>
+                    <a href="{% url 'women' %}" class="btn btn-success">Explore For Womens</a>
+                </div>
+            </div>
+            <div class="card col-ld-3 col-md-4 col-12 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card7 %}<img src="../static/images/women/her.jpeg" class="img-fluid card-img-top" alt="...">{% endblock card7 %}
+                <div class="card-body">
+                    <h5 class="card-title">Womens Sneakers</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'women' %}" class="btn btn-success ">Explore For Womens</a>
+                </div>
+            </div>
+            <div class="card col-ld-3 col-md-4 col-12 px-0" style="width: 16rem;margin-left: 20px;">
+                {% block card8 %}<img src="../static/images/women/sandals/images.jpeg " class="img-fluid card-img-top" alt="...">{% endblock card8 %}
+                <div class="card-body">
+                    <h5 class="card-title">Womens Sandals</h5>
+                    <p class="card-text"></p><br>
+                    <a href="{% url 'women' %}" class="btn btn-success ">Explore For Womens</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock cards%}

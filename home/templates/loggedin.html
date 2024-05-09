@@ -1,0 +1,23 @@
+{% extends 'basic.html' %}
+{% block title %}<title>Home</title>{% endblock title %}
+
+
+{% block log %}<button type="button"  class="btn btn-outline-light me-2"><a href="{% url 'logout' %}" style="text-decoration: none;" class="link-light">My Cart <i class="fa-solid fa-cart-shopping"></i></a></button>{% endblock log %}
+
+
+{% block sign %}
+<!-- Example split danger button -->
+<div class="btn-group">
+    <button type="button" class="btn btn-outline-light ">{{name}}</button>
+    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="{% url 'profile' %}">My profile</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">My Orders</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+  </div>
+{% endblock sign %}
